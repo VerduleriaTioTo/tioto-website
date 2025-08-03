@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tío To - Verduras de Calidad para tu Cocina</title>
+    <title>Tío To Verdulería - Verduras de Calidad para tu Cocina</title>
     <style>
         * {
             margin: 0;
@@ -87,7 +87,10 @@
 
         /* Hero Section */
         .hero {
-            background: #f5f2ed;
+            background: linear-gradient(135deg, rgba(245, 242, 237, 0.95), rgba(245, 242, 237, 0.9)), 
+                        url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
             color: #2c3e1a;
             text-align: center;
             padding: 150px 0 100px;
@@ -175,6 +178,7 @@
             border-radius: 20px;
             margin: 40px 0;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
         .about-content {
@@ -183,6 +187,23 @@
             gap: 4rem;
             align-items: center;
             padding: 60px;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
         }
 
         .about-text {
@@ -224,7 +245,11 @@
 
         /* Products Section */
         .products {
-            background: #4a6741;
+            background: linear-gradient(135deg, rgba(74, 103, 65, 0.95), rgba(74, 103, 65, 0.9)), 
+                        url('https://images.unsplash.com/photo-1506976785307-8732e854ad03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
         }
 
@@ -323,7 +348,10 @@
         }
 
         .working-process {
-            background: #2c3e1a;
+            background: linear-gradient(135deg, rgba(44, 62, 26, 0.95), rgba(44, 62, 26, 0.9)), 
+                        url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
         }
 
@@ -404,12 +432,51 @@
                 padding: 40px 20px;
             }
 
+            .about-features {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 0 20px 40px;
+            }
+
             .section-title {
                 font-size: 2rem;
             }
         }
 
-        .scroll-indicator {
+        /* Galería de productos */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .product-gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .product-gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .product-gallery-item .caption {
+            padding: 1rem;
+            text-align: center;
+            color: #2c3e1a;
+            font-weight: bold;
+        }
             position: fixed;
             top: 0;
             left: 0;
@@ -456,7 +523,7 @@
     
     <!-- Logo flotante -->
     <div class="floating-logo">
-        <img src="https://res.cloudinary.com/dqjuqri5z/image/upload/v1754075650/logo_tio_to_1_wicjij.png" alt="Tío To Logo">
+        <img src="https://res.cloudinary.com/dqjuqri5z/image/upload/v1754075650/logo_tio_to_1_wicjij.png" alt="Tío To Verdulería Logo">
     </div>
     
     <header>
@@ -495,41 +562,45 @@
                     <p>Ser un proveedor confiable y cercano para restaurantes que valoren la calidad. Nos comprometemos a entregar productos frescos con orden, responsabilidad y la mejor disposición, incluso frente a solicitudes urgentes o de último minuto.</p>
                 </div>
                 
-                <div class="about-features">
-                    <div class="feature-item">
-                        <div class="feature-icon">🥬</div>
-                        <div>
-                            <h4>Frescura Garantizada</h4>
-                            <p>Productos frescos todos los días</p>
-                        </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Verduras frescas de calidad">
+                </div>
+            </div>
+            
+            <div class="about-features">
+                <div class="feature-item">
+                    <div class="feature-icon">🥬</div>
+                    <div>
+                        <h4>Frescura Garantizada</h4>
+                        <p>Productos frescos todos los días</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">⏰</div>
-                        <div>
-                            <h4>Puntualidad</h4>
-                            <p>Entregas a primera hora</p>
-                        </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⏰</div>
+                    <div>
+                        <h4>Puntualidad</h4>
+                        <p>Entregas a primera hora</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">💬</div>
-                        <div>
-                            <h4>Atención Directa</h4>
-                            <p>Servicio personalizado y cercano</p>
-                        </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <div>
+                        <h4>Atención Directa</h4>
+                        <p>Servicio personalizado y cercano</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📦</div>
-                        <div>
-                            <h4>Flexibilidad</h4>
-                            <p>Pedidos de emergencia</p>
-                        </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📦</div>
+                    <div>
+                        <h4>Flexibilidad</h4>
+                        <p>Pedidos de emergencia</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📍</div>
-                        <div>
-                            <h4>Cobertura</h4>
-                            <p>Zonas clave de Santiago</p>
-                        </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📍</div>
+                    <div>
+                        <h4>Cobertura</h4>
+                        <p>Zonas clave de Santiago</p>
                     </div>
                 </div>
             </div>
@@ -638,7 +709,7 @@
                             <span class="product-price">$898/kg</span>
                         </div>
                         <div class="product-item">
-                            <span>Y MÓS...</span>
+                            <span>Y MÁS...</span>
                             <span class="product-price">📞</span>
                         </div>
                     </div>
@@ -647,6 +718,34 @@
             <p style="text-align: center; margin-top: 2rem; opacity: 0.8;">
                 <em>*Los valores no consideran IVA y se encuentran sujetos a cambios.</em>
             </p>
+            
+            <!-- Galería de productos -->
+            <div class="product-gallery">
+                <div class="product-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tomates frescos">
+                    <div class="caption">Tomates Frescos</div>
+                </div>
+                <div class="product-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1445282768818-728615cc910a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Zanahorias">
+                    <div class="caption">Zanahorias</div>
+                </div>
+                <div class="product-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Lechugas hidropónicas">
+                    <div class="caption">Lechugas Hidropónicas</div>
+                </div>
+                <div class="product-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Paltas">
+                    <div class="caption">Paltas Premium</div>
+                </div>
+                <div class="product-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Hierbas frescas">
+                    <div class="caption">Hierbas Aromáticas</div>
+                </div>
+                <div class="product-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pimientos">
+                    <div class="caption">Pimientos Coloridos</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -784,3 +883,4 @@
     </script>
 </body>
 </html>
+
