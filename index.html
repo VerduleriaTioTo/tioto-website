@@ -965,7 +965,34 @@
             const seccion = document.getElementById('productosCompletos');
             seccion.classList.add('show');
             seccion.scrollIntoView({ behavior: 'smooth' });
-            cargarProductos(todosLosProductos);
+            
+            // Test simple - crear productos manualmente
+            const tabla = document.getElementById('productosTabla');
+            tabla.innerHTML = '';
+            
+            // Crear algunos productos de prueba manualmente
+            const productosTest = [
+                { nombre: "Tomate", precio: 952, unidad: "kg" },
+                { nombre: "Huevos", precio: 218, unidad: "unidad" },
+                { nombre: "Ají Verde", precio: 2813, unidad: "kg" }
+            ];
+            
+            productosTest.forEach(producto => {
+                const item = document.createElement('div');
+                item.className = 'producto-item-completo';
+                
+                // Formato simple y directo
+                const precioConFormato = producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                const textoCompleto = `${precioConFormato}/${producto.unidad}`;
+                
+                item.innerHTML = `
+                    <span class="producto-nombre">${producto.nombre}</span>
+                    <span class="producto-precio-completo">${textoCompleto}</span>
+                `;
+                tabla.appendChild(item);
+            });
+            
+            document.getElementById('contadorProductos').textContent = `${productosTest.length} productos de prueba`;
         }
 
         // Función para ocultar productos completos
@@ -1069,4 +1096,3 @@
     </script>
 </body>
 </html>
-
