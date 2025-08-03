@@ -1026,15 +1026,35 @@
         function filtrarProductos() {
             const busqueda = document.getElementById('searchInput').value.toLowerCase();
             
+            let productosFiltrados;
             if (busqueda === '') {
-                productosFiltrados = [...todosLosProductos];
+                productosFiltrados = todosLosProductos;
             } else {
                 productosFiltrados = todosLosProductos.filter(producto => 
                     producto.nombre.toLowerCase().includes(busqueda)
                 );
             }
             
-            cargarProductos(productosFiltrados);
+            // Mostrar productos filtrados
+            const tabla = document.getElementById('productosTabla');
+            tabla.innerHTML = '';
+            
+            productosFiltrados.forEach(producto => {
+                const item = document.createElement('div');
+                item.className = 'producto-item-completo';
+                
+                // Mismo formato que funciona
+                const precioConFormato = producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                const textoCompleto = `${precioConFormato}/${producto.unidad}`;
+                
+                item.innerHTML = `
+                    <span class="producto-nombre">${producto.nombre}</span>
+                    <span class="producto-precio-completo">${textoCompleto}</span>
+                `;
+                tabla.appendChild(item);
+            });
+            
+            document.getElementById('contadorProductos').textContent = `${productosFiltrados.length} productos disponibles`;
         }
 
         // Smooth scrolling for navigation links
