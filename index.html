@@ -11,6 +11,105 @@
             box-sizing: border-box;
         }
 
+        /* Catálogo completo de productos */
+        .productos-completos {
+            display: none;
+            background: white;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 60px;
+        }
+
+        .productos-completos.show {
+            display: block;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border: 2px solid #4a6741;
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .search-input:focus {
+            border-color: #2c3e1a;
+            box-shadow: 0 0 10px rgba(74, 103, 65, 0.3);
+        }
+
+        .productos-tabla {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .producto-item-completo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #4a6741;
+        }
+
+        .producto-item-completo:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .producto-nombre {
+            font-weight: bold;
+            color: #2c3e1a;
+            font-size: 1rem;
+        }
+
+        .producto-precio-completo {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #4a6741;
+        }
+
+        .ver-mas-btn, .ver-menos-btn {
+            display: inline-block;
+            background: #4a6741;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+
+        .ver-mas-btn:hover, .ver-menos-btn:hover {
+            background: #3d5537;
+            transform: translateY(-2px);
+        }
+
+        .productos-contador {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #2c3e1a;
+            font-style: italic;
+        }
+
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.6;
@@ -521,7 +620,7 @@
             <h2 class="section-title">¿Quiénes Somos?</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>En Tío To Verdulería somos una <strong>verdulería familiar comprometida con la calidad y el servicio</strong>. Actualmente abastecemos a dos locales de los restaurantes Tip y Tap, y buscamos ampliar nuestras alianzas con nuevas cocinas que valoren la frescura, la puntualidad y la atención personalizada.</p>
+                    <p>En Tío To Verdulería somos una <strong>verdulería familiar comprometida con la calidad y el servicio</strong>. Actualmente abastecemos a distintos restaurantes, y buscamos ampliar nuestras alianzas con nuevas cocinas que valoren la frescura, la puntualidad y la atención personalizada.</p>
                     
                     <h3 style="margin: 2rem 0 1rem; color: #2c3e1a;">Nuestra Misión</h3>
                     <p>Ser un proveedor confiable y cercano para restaurantes que valoren la calidad. Nos comprometemos a entregar productos frescos con orden, responsabilidad y la mejor disposición, incluso frente a solicitudes urgentes o de último minuto.</p>
@@ -683,6 +782,33 @@
             <p style="text-align: center; margin-top: 2rem; opacity: 0.8;">
                 <em>*Los valores no consideran IVA y se encuentran sujetos a cambios.</em>
             </p>
+            
+            <div style="text-align: center;">
+                <button class="ver-mas-btn" onclick="mostrarProductosCompletos()">Ver Todos los Productos (67)</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de productos completos -->
+    <section class="productos-completos" id="productosCompletos">
+        <div class="container">
+            <h2 class="section-title">Catálogo Completo de Productos</h2>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar producto..." onkeyup="filtrarProductos()">
+            </div>
+            
+            <div class="productos-contador" id="contadorProductos">
+                Mostrando 67 productos
+            </div>
+            
+            <div class="productos-tabla" id="productosTabla">
+                <!-- Los productos se cargan dinámicamente con JavaScript -->
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="ver-menos-btn" onclick="ocultarProductosCompletos()">Volver al Resumen</button>
+            </div>
         </div>
     </section>
 
@@ -744,7 +870,7 @@
                 
                 <div style="background: #4a6741; border-radius: 20px; padding: 3rem; color: white; text-align: center;">
                     <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">¿Listo para trabajar juntos?</h3>
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">Únete a restaurantes como Tip y Tap que ya confían en nuestra calidad y servicio.</p>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">Únete a restaurantes que ya confían en nuestra calidad y servicio.</p>
                     <a href="https://wa.me/56977479866" target="_blank" style="display: inline-block; background: white; color: #4a6741; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s ease;">
                         WhatsApp Directo 💬
                     </a>
@@ -761,6 +887,129 @@
     </footer>
 
     <script>
+        // Base de datos completa de productos
+        const todosLosProductos = [
+            { nombre: "Aji amarillo", precio: 6444 },
+            { nombre: "Aji de color", precio: 6847 },
+            { nombre: "Ají Verde", precio: 2813 },
+            { nombre: "Ajinomoto", precio: 5032 },
+            { nombre: "Albahaca", precio: 1200 },
+            { nombre: "Apio", precio: 1402 },
+            { nombre: "Berros", precio: 8500 },
+            { nombre: "Bicarbonato", precio: 2309 },
+            { nombre: "Brócoli", precio: 1603 },
+            { nombre: "Cebolla Morada (kg)", precio: 897 },
+            { nombre: "Cebolla morada (und)", precio: 393 },
+            { nombre: "Cebolla Pelada", precio: 980 },
+            { nombre: "Choclo", precio: 797 },
+            { nombre: "Choclo grano congelado", precio: 3015 },
+            { nombre: "Choclo peruano", precio: 6545 },
+            { nombre: "Ciboulette", precio: 167 },
+            { nombre: "Cilantro", precio: 1603 },
+            { nombre: "Clara en polvo", precio: 29032 },
+            { nombre: "Clara líquida", precio: 11082 },
+            { nombre: "Coliflor", precio: 1603 },
+            { nombre: "Espárragos congelados", precio: 9449 },
+            { nombre: "Espinaca", precio: 1805 },
+            { nombre: "Frutilla", precio: 4629 },
+            { nombre: "Huevo extra color", precio: 235 },
+            { nombre: "Huevo líquido", precio: 7850 },
+            { nombre: "Huevos", precio: 218 },
+            { nombre: "Jengibre", precio: 4830 },
+            { nombre: "Kiwi", precio: 2208 },
+            { nombre: "Lechuga Escarola", precio: 990 },
+            { nombre: "Lechuga hidropónica", precio: 990 },
+            { nombre: "Lentejas", precio: 3318 },
+            { nombre: "Limón", precio: 534 },
+            { nombre: "Limón de pica", precio: 4830 },
+            { nombre: "Longaniza (kg)", precio: 7049 },
+            { nombre: "Longanizas (unid)", precio: 1906 },
+            { nombre: "Manzana Roja", precio: 1900 },
+            { nombre: "Manzana verde", precio: 1900 },
+            { nombre: "Menta (band)", precio: 1956 },
+            { nombre: "Menta (kg)", precio: 13109 },
+            { nombre: "Naranja", precio: 797 },
+            { nombre: "Nueces", precio: 6040 },
+            { nombre: "Orégano", precio: 9066 },
+            { nombre: "Panko", precio: 4024 },
+            { nombre: "Papa camote", precio: 2007 },
+            { nombre: "Papas Pelada", precio: 1149 },
+            { nombre: "Pechuga de pollo", precio: 7654 },
+            { nombre: "Peras", precio: 2007 },
+            { nombre: "Pimentón amarillo", precio: 1704 },
+            { nombre: "Pimienta molida", precio: 15923 },
+            { nombre: "Pimiento Rojo", precio: 900 },
+            { nombre: "Pimiento Verde", precio: 900 },
+            { nombre: "Piña", precio: 3500 },
+            { nombre: "Plátano", precio: 2007 },
+            { nombre: "Porotos Verdes", precio: 4326 },
+            { nombre: "Queso Azul", precio: 3015 },
+            { nombre: "Rocoto", precio: 5334 },
+            { nombre: "Romero", precio: 12101 },
+            { nombre: "Rúcula", precio: 5032 },
+            { nombre: "Tomate", precio: 952 },
+            { nombre: "Tuna", precio: 3318 },
+            { nombre: "Uva Rosada", precio: 3297 },
+            { nombre: "Uva Verde", precio: 5032 },
+            { nombre: "Zanahoria", precio: 696 },
+            { nombre: "Zapallito italiano", precio: 790 },
+            { nombre: "Zapallo camote", precio: 1402 },
+            { nombre: "Garbanzos", precio: 3025 },
+            { nombre: "Poroto Burro", precio: 3822 }
+        ];
+
+        let productosFiltrados = [...todosLosProductos];
+
+        // Función para mostrar productos completos
+        function mostrarProductosCompletos() {
+            const seccion = document.getElementById('productosCompletos');
+            seccion.classList.add('show');
+            seccion.scrollIntoView({ behavior: 'smooth' });
+            cargarProductos(todosLosProductos);
+        }
+
+        // Función para ocultar productos completos
+        function ocultarProductosCompletos() {
+            const seccion = document.getElementById('productosCompletos');
+            seccion.classList.remove('show');
+            document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Función para cargar productos en la tabla
+        function cargarProductos(productos) {
+            const tabla = document.getElementById('productosTabla');
+            const contador = document.getElementById('contadorProductos');
+            
+            tabla.innerHTML = '';
+            
+            productos.forEach(producto => {
+                const item = document.createElement('div');
+                item.className = 'producto-item-completo';
+                item.innerHTML = `
+                    <span class="producto-nombre">${producto.nombre}</span>
+                    <span class="producto-precio-completo">${producto.precio.toLocaleString()}</span>
+                `;
+                tabla.appendChild(item);
+            });
+            
+            contador.textContent = `Mostrando ${productos.length} productos`;
+        }
+
+        // Función para filtrar productos
+        function filtrarProductos() {
+            const busqueda = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (busqueda === '') {
+                productosFiltrados = [...todosLosProductos];
+            } else {
+                productosFiltrados = todosLosProductos.filter(producto => 
+                    producto.nombre.toLowerCase().includes(busqueda)
+                );
+            }
+            
+            cargarProductos(productosFiltrados);
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
