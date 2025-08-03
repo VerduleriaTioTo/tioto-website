@@ -11,105 +11,6 @@
             box-sizing: border-box;
         }
 
-        /* Catálogo completo de productos */
-        .productos-completos {
-            display: none;
-            background: white;
-            border-radius: 20px;
-            margin: 40px 0;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            padding: 60px;
-        }
-
-        .productos-completos.show {
-            display: block;
-        }
-
-        .search-container {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .search-input {
-            width: 100%;
-            max-width: 400px;
-            padding: 15px 20px;
-            font-size: 1.1rem;
-            border: 2px solid #4a6741;
-            border-radius: 10px;
-            outline: none;
-            transition: all 0.3s ease;
-            font-family: 'Georgia', serif;
-        }
-
-        .search-input:focus {
-            border-color: #2c3e1a;
-            box-shadow: 0 0 10px rgba(74, 103, 65, 0.3);
-        }
-
-        .productos-tabla {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .producto-item-completo {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            border-left: 4px solid #4a6741;
-        }
-
-        .producto-item-completo:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .producto-nombre {
-            font-weight: bold;
-            color: #2c3e1a;
-            font-size: 1rem;
-        }
-
-        .producto-precio-completo {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #4a6741;
-        }
-
-        .ver-mas-btn, .ver-menos-btn {
-            display: inline-block;
-            background: #4a6741;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: 'Georgia', serif;
-            font-size: 1rem;
-            margin-top: 2rem;
-        }
-
-        .ver-mas-btn:hover, .ver-menos-btn:hover {
-            background: #3d5537;
-            transform: translateY(-2px);
-        }
-
-        .productos-contador {
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #2c3e1a;
-            font-style: italic;
-        }
-
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.6;
@@ -399,6 +300,105 @@
             color: #ffd700;
         }
 
+        /* Catálogo completo de productos */
+        .productos-completos {
+            display: none;
+            background: white;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 60px;
+        }
+
+        .productos-completos.show {
+            display: block;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border: 2px solid #4a6741;
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .search-input:focus {
+            border-color: #2c3e1a;
+            box-shadow: 0 0 10px rgba(74, 103, 65, 0.3);
+        }
+
+        .productos-tabla {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .producto-item-completo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #4a6741;
+        }
+
+        .producto-item-completo:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .producto-nombre {
+            font-weight: bold;
+            color: #2c3e1a;
+            font-size: 1rem;
+        }
+
+        .producto-precio-completo {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #4a6741;
+        }
+
+        .ver-mas-btn, .ver-menos-btn {
+            display: inline-block;
+            background: #4a6741;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+
+        .ver-mas-btn:hover, .ver-menos-btn:hover {
+            background: #3d5537;
+            transform: translateY(-2px);
+        }
+
+        .productos-contador {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #2c3e1a;
+            font-style: italic;
+        }
+
         /* Contact Section */
         .contact {
             background: white;
@@ -540,7 +540,7 @@
             }
         }
 
-        }
+        .scroll-indicator {
             position: fixed;
             top: 0;
             left: 0;
@@ -680,23 +680,23 @@
                     <div class="product-list">
                         <div class="product-item">
                             <span>Zanahoria</span>
-                            <span class="product-price">$800/kg</span>
+                            <span class="product-price">$696/kg</span>
                         </div>
                         <div class="product-item">
                             <span>Cebolla Pelada</span>
                             <span class="product-price">$980/kg</span>
                         </div>
                         <div class="product-item">
-                            <span>Papa Pelada</span>
-                            <span class="product-price">$1.150/kg</span>
+                            <span>Papas Peladas</span>
+                            <span class="product-price">$1.149/kg</span>
                         </div>
                         <div class="product-item">
                             <span>Tomate</span>
-                            <span class="product-price">$1.060/kg</span>
+                            <span class="product-price">$952/kg</span>
                         </div>
                         <div class="product-item">
                             <span>Apio</span>
-                            <span class="product-price">$1.700/unidad</span>
+                            <span class="product-price">$1.402/unidad</span>
                         </div>
                     </div>
                 </div>
@@ -706,7 +706,7 @@
                     <div class="product-list">
                         <div class="product-item">
                             <span>Lechuga Hidropónica</span>
-                            <span class="product-price">$980/unidad</span>
+                            <span class="product-price">$990/unidad</span>
                         </div>
                         <div class="product-item">
                             <span>Lechuga Escarola</span>
@@ -714,15 +714,15 @@
                         </div>
                         <div class="product-item">
                             <span>Espinaca</span>
-                            <span class="product-price">$2.000/kg</span>
+                            <span class="product-price">$1.805/kg</span>
                         </div>
                         <div class="product-item">
                             <span>Rúcula</span>
-                            <span class="product-price">$3.700/kg</span>
+                            <span class="product-price">$5.032/kg</span>
                         </div>
                         <div class="product-item">
                             <span>Berros</span>
-                            <span class="product-price">$8.200/kg</span>
+                            <span class="product-price">$8.500/kg</span>
                         </div>
                     </div>
                 </div>
@@ -732,23 +732,23 @@
                     <div class="product-list">
                         <div class="product-item">
                             <span>Ají Verde</span>
-                            <span class="product-price">$3.300/kg</span>
+                            <span class="product-price">$2.813/kg</span>
                         </div>
                         <div class="product-item">
                             <span>Cilantro</span>
-                            <span class="product-price">$2.900/pqte</span>
+                            <span class="product-price">$1.603/pqte</span>
                         </div>
                         <div class="product-item">
                             <span>Albahaca</span>
-                            <span class="product-price">$1.400/pqte</span>
+                            <span class="product-price">$1.200/pqte</span>
                         </div>
                         <div class="product-item">
                             <span>Ciboulette</span>
-                            <span class="product-price">$225/pqte</span>
+                            <span class="product-price">$167/pqte</span>
                         </div>
                         <div class="product-item">
-                            <span>Menta</span>
-                            <span class="product-price">$6.200</span>
+                            <span>Orégano</span>
+                            <span class="product-price">$9.066/kg</span>
                         </div>
                     </div>
                 </div>
@@ -758,19 +758,19 @@
                     <div class="product-list">
                         <div class="product-item">
                             <span>Huevos</span>
-                            <span class="product-price">$210/unidad</span>
-                        </div>
-                        <div class="product-item">
-                            <span>Palta</span>
-                            <span class="product-price">$2.800/kg</span>
+                            <span class="product-price">$218/unidad</span>
                         </div>
                         <div class="product-item">
                             <span>Limón</span>
-                            <span class="product-price">$696/kg</span>
+                            <span class="product-price">$534/kg</span>
                         </div>
                         <div class="product-item">
                             <span>Naranja</span>
-                            <span class="product-price">$898/kg</span>
+                            <span class="product-price">$797/kg</span>
+                        </div>
+                        <div class="product-item">
+                            <span>Manzana Roja</span>
+                            <span class="product-price">$1.900/kg</span>
                         </div>
                         <div class="product-item">
                             <span>Y MÁS...</span>
@@ -784,7 +784,7 @@
             </p>
             
             <div style="text-align: center;">
-                <button class="ver-mas-btn" onclick="mostrarProductosCompletos()">Ver Todos los Productos </button>
+                <button class="ver-mas-btn" onclick="mostrarProductosCompletos()">Ver Todos los Productos</button>
             </div>
         </div>
     </section>
@@ -799,7 +799,7 @@
             </div>
             
             <div class="productos-contador" id="contadorProductos">
-                Mostrando 67 productos
+                Nuestros productos disponibles
             </div>
             
             <div class="productos-tabla" id="productosTabla">
@@ -889,70 +889,73 @@
     <script>
         // Base de datos completa de productos
         const todosLosProductos = [
-            { nombre: "Aji amarillo", precio: $6444/kg},
-            { nombre: "Aji de color", precio: $6847/kg},
-            { nombre: "Ají Verde", precio: $2813/kg },
-            { nombre: "Ajinomoto", precio: $5032/kg },
-            { nombre: "Albahaca", precio: $1200/Paquete },
-            { nombre: "Apio", precio: $1402/Unidad },
-            { nombre: "Berros", precio: $8500/Kg },
-            { nombre: "Bicarbonato", precio: $2309/Kg },
-            { nombre: "Brócoli", precio: $1603/Unidad },
-            { nombre: "Cebolla Morada (kg)", precio: $897/Kg },
-            { nombre: "Cebolla morada (und)", precio: $393/Unidad },
-            { nombre: "Cebolla Pelada", precio: $980/Kg },
-            { nombre: "Choclo", precio: $797/Unidad },
-            { nombre: "Choclo grano congelado", precio: $3015/Kg },
-            { nombre: "Choclo peruano", precio: $6545/Kg },
-            { nombre: "Ciboulette", precio: $167/Paquete },
-            { nombre: "Cilantro", precio: $1603/Paquete },
-            { nombre: "Clara en polvo", precio: $29032/Kg },
-            { nombre: "Clara líquida", precio: $11082/Botella },
-            { nombre: "Coliflor", precio: $1603/Unidad },
-            { nombre: "Espárragos congelados", precio: $9449/Kg },
-            { nombre: "Espinaca", precio: $1805/Kg },
-            { nombre: "Frutilla", precio: $4629/Kg },
-            { nombre: "Huevo extra color", precio: $235/Unidad },
-            { nombre: "Huevo líquido", precio: $7850/Botella },
-            { nombre: "Huevos", precio: $218/Unidad },
-            { nombre: "Jengibre", precio: $4830/Kg },
-            { nombre: "Kiwi", precio: $2208/Kg },
-            { nombre: "Lechuga Escarola", precio: $990/Unidad },
-            { nombre: "Lechuga hidropónica", precio: $990/Unidad },
-            { nombre: "Lentejas", precio: $3318/Kg },
-            { nombre: "Limón", precio: $534/Kg },
-            { nombre: "Limón de pica", precio: $4830/Kg },
-            { nombre: "Longaniza (kg)", precio: $7049/Kg },
-            { nombre: "Longanizas (unid)", precio: $1906/Unidad },
-            { nombre: "Manzana Roja", precio: $1900/Kg },
-            { nombre: "Manzana verde", precio: $1900/Kg },
-            { nombre: "Menta (band)", precio: $1956/Bandeja },
-            { nombre: "Menta (kg)", precio: $13109/Kg },
-            { nombre: "Naranja", precio: $797/Kg },
-            { nombre: "Nueces", precio: $6040/Kg },
-            { nombre: "Orégano", precio: $9066/Kg },
-            { nombre: "Panko", precio: $4024/Kg },
-            { nombre: "Papa camote", precio: $2007/Kg },
-            { nombre: "Papas Pelada", precio: $1149/Kg },
-            { nombre: "Pechuga de pollo", precio: $7654/Kg },
-            { nombre: "Peras", precio: $2007/Kg },
-            { nombre: "Pimentón amarillo", precio: $1704/Unidad },
-            { nombre: "Pimienta molida", precio: $15923/Kg },
-            { nombre: "Pimiento Rojo", precio: $900/Unidad },
-            { nombre: "Pimiento Verde", precio: $900/Unidad },
-            { nombre: "Piña", precio: $3500/Unidad },
-            { nombre: "Plátano", precio: $2007/Kg },
-            { nombre: "Porotos Verdes", precio: $4326/Kg },
-            { nombre: "Rocoto", precio: $5334/Kg },
-            { nombre: "Romero", precio: $12101/Kg },
-            { nombre: "Rúcula", precio: $5032/Kg },
-            { nombre: "Tomate", precio: $952/Kg },
-            { nombre: "Tuna", precio: $3318/Kg },
-            { nombre: "Uva Rosada", precio: $3297/Kg },
-            { nombre: "Uva Verde", precio: $5032/Kg },
-            { nombre: "Zanahoria", precio: $696/Kg },
-            { nombre: "Zapallito italiano", precio: $790/Unidad },
-            { nombre: "Zapallo camote", precio: $1402/Kg },
+            { nombre: "Aji amarillo", precio: 6444, unidad: "kg" },
+            { nombre: "Aji de color", precio: 6847, unidad: "kg" },
+            { nombre: "Ají Verde", precio: 2813, unidad: "kg" },
+            { nombre: "Ajinomoto", precio: 5032, unidad: "kg" },
+            { nombre: "Albahaca", precio: 1200, unidad: "pqte" },
+            { nombre: "Apio", precio: 1402, unidad: "unidad" },
+            { nombre: "Berros", precio: 8500, unidad: "kg" },
+            { nombre: "Bicarbonato", precio: 2309, unidad: "kg" },
+            { nombre: "Brócoli", precio: 1603, unidad: "unidad" },
+            { nombre: "Cebolla Morada", precio: 897, unidad: "kg" },
+            { nombre: "Cebolla morada", precio: 393, unidad: "unidad" },
+            { nombre: "Cebolla Pelada", precio: 980, unidad: "kg" },
+            { nombre: "Choclo", precio: 797, unidad: "unidad" },
+            { nombre: "Choclo grano congelado", precio: 3015, unidad: "kg" },
+            { nombre: "Choclo peruano", precio: 6545, unidad: "kg" },
+            { nombre: "Ciboulette", precio: 167, unidad: "pqte" },
+            { nombre: "Cilantro", precio: 1603, unidad: "pqte" },
+            { nombre: "Clara en polvo", precio: 29032, unidad: "kg" },
+            { nombre: "Clara líquida", precio: 11082, unidad: "botella" },
+            { nombre: "Coliflor", precio: 1603, unidad: "unidad" },
+            { nombre: "Espárragos congelados", precio: 9449, unidad: "kg" },
+            { nombre: "Espinaca", precio: 1805, unidad: "kg" },
+            { nombre: "Frutilla", precio: 4629, unidad: "kg" },
+            { nombre: "Huevo extra color", precio: 235, unidad: "unidad" },
+            { nombre: "Huevo líquido", precio: 7850, unidad: "botella" },
+            { nombre: "Huevos", precio: 218, unidad: "unidad" },
+            { nombre: "Jengibre", precio: 4830, unidad: "kg" },
+            { nombre: "Kiwi", precio: 2208, unidad: "kg" },
+            { nombre: "Lechuga Escarola", precio: 990, unidad: "unidad" },
+            { nombre: "Lechuga hidropónica", precio: 990, unidad: "unidad" },
+            { nombre: "Lentejas", precio: 3318, unidad: "kg" },
+            { nombre: "Limón", precio: 534, unidad: "kg" },
+            { nombre: "Limón de pica", precio: 4830, unidad: "kg" },
+            { nombre: "Longaniza", precio: 7049, unidad: "kg" },
+            { nombre: "Longanizas", precio: 1906, unidad: "unidad" },
+            { nombre: "Manzana Roja", precio: 1900, unidad: "kg" },
+            { nombre: "Manzana verde", precio: 1900, unidad: "kg" },
+            { nombre: "Menta", precio: 1956, unidad: "bandeja" },
+            { nombre: "Menta", precio: 13109, unidad: "kg" },
+            { nombre: "Naranja", precio: 797, unidad: "kg" },
+            { nombre: "Nueces", precio: 6040, unidad: "kg" },
+            { nombre: "Orégano", precio: 9066, unidad: "kg" },
+            { nombre: "Panko", precio: 4024, unidad: "kg" },
+            { nombre: "Papa camote", precio: 2007, unidad: "kg" },
+            { nombre: "Papas Peladas", precio: 1149, unidad: "kg" },
+            { nombre: "Pechuga de pollo", precio: 7654, unidad: "kg" },
+            { nombre: "Peras", precio: 2007, unidad: "kg" },
+            { nombre: "Pimentón amarillo", precio: 1704, unidad: "unidad" },
+            { nombre: "Pimienta molida", precio: 15923, unidad: "kg" },
+            { nombre: "Pimiento Rojo", precio: 900, unidad: "unidad" },
+            { nombre: "Pimiento Verde", precio: 900, unidad: "unidad" },
+            { nombre: "Piña", precio: 3500, unidad: "unidad" },
+            { nombre: "Plátano", precio: 2007, unidad: "kg" },
+            { nombre: "Porotos Verdes", precio: 4326, unidad: "kg" },
+            { nombre: "Queso Azul", precio: 3015, unidad: "kg" },
+            { nombre: "Rocoto", precio: 5334, unidad: "kg" },
+            { nombre: "Romero", precio: 12101, unidad: "kg" },
+            { nombre: "Rúcula", precio: 5032, unidad: "kg" },
+            { nombre: "Tomate", precio: 952, unidad: "kg" },
+            { nombre: "Tuna", precio: 3318, unidad: "kg" },
+            { nombre: "Uva Rosada", precio: 3297, unidad: "kg" },
+            { nombre: "Uva Verde", precio: 5032, unidad: "kg" },
+            { nombre: "Zanahoria", precio: 696, unidad: "kg" },
+            { nombre: "Zapallito italiano", precio: 790, unidad: "unidad" },
+            { nombre: "Zapallo camote", precio: 1402, unidad: "kg" },
+            { nombre: "Garbanzos", precio: 3025, unidad: "kg" },
+            { nombre: "Poroto Burro", precio: 3822, unidad: "kg" }
         ];
 
         let productosFiltrados = [...todosLosProductos];
@@ -989,7 +992,7 @@
                 tabla.appendChild(item);
             });
             
-            contador.textContent = `Mostrando ${productos.length} productos`;
+            contador.textContent = `${productos.length} productos disponibles`;
         }
 
         // Función para filtrar productos
@@ -1066,4 +1069,3 @@
     </script>
 </body>
 </html>
-
